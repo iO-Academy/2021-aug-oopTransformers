@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: Transformers;
-  src: url(assets/fonts/TransformersMovie-y9Ad.ttf);
+  src: url(../assets/fonts/TransformersMovie-y9Ad.ttf);
 }
 
 @font-face {
   font-family: Optimus;
-  src: url(assets/fonts/Optimus-73lD.ttf);
+  src: url(../assets/fonts/Optimus-73lD.ttf);
 }
 
 h1 {

@@ -1,5 +1,5 @@
 <?php
-require 'ViewHelpers/Details.php';
+require 'src/ViewHelpers/Details.php';
 $testtransformer = [
     "name" => "Astrotrain",
     "size" => "16",
