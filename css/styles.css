@@ -1,0 +1,30 @@
+body {
+  background-image: url("../assets/images/stars.jpg");
+}
+
+.header {
+  text-align: center;
+}
+
+@font-face {
+  font-family: Transformers;
+  src: url(../assets/fonts/TransformersMovie-y9Ad.ttf);
+}
+
+@font-face {
+  font-family: Optimus;
+  src: url(../assets/fonts/Optimus-73lD.ttf);
+}
+
+h1 {
+  font-family: Transformers;
+  font-size: 8rem;
+  background: -webkit-linear-gradient(#1B2A87, #C20F02);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label {
+  color: white;
+}
+
