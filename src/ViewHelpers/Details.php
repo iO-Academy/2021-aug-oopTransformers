@@ -13,15 +13,17 @@ class Details
         $type = $transformer["type"];
         $img_url = $transformer["img_url"];
         echo "
-            <div>
-            <h3>$name</h3>
-            <h3>$size</h3>
-            <h3>$speed</h3>
-            <h3>$power</h3>
-            <h3>$disguise</h3>
-            <h3>$top_trumps_rating</h3>
-            <h3>$type</h3>
-            <h3>$img_url</h3>
+            <div class='m-5'>
+                <img class='transformer-details-image' src='$img_url' alt='picture of $name'/>
+            </div>
+            <div class='transformer-details m-5'>
+                <h3>$name</h3>
+                <h4>Type: $type</h4>
+                <p>Size: $size</p>
+                <p>Speed: $speed</p>
+                <p>Power: $power</p>
+                <p>Disguise: $disguise</p>
+                <p>Top Trumps Rating: $top_trumps_rating</p>
             </div>
             ";
     }
