@@ -1,8 +1,8 @@
 <?php
 require 'vendor/autoload.php';
 use Transformers\ViewHelpers\Details;
-
-$id = $_GET['id'];
+// Check if user was sent here with a GET. Assign id var if true, return to index if false.
+(isset($_GET['id'])) ? $id = $_GET['id'] : header('Location: index.php');
 $transformer = new Details();
 
 ?>
