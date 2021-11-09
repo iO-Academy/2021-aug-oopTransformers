@@ -1,10 +1,10 @@
 <?php
 
 use Transformers\viewhelpers\IndexViewHelper;
+require "vendor/autoload.php";
 
-require "../../vendor/autoload.php";
-//    include 'src/viewhelpers/IndexViewHelper.php';
-    $indexViewHelper = new IndexViewHelper();
+$indexViewHelper = new IndexViewHelper();
+
 ?>
 
 <!DOCTYPE html>
@@ -53,8 +53,7 @@ require "../../vendor/autoload.php";
 
             <div class="card-container">
                 <?php
-
-                $indexViewHelper->createTransformerCard($indexmodel);
+                $indexViewHelper->createTransformerCard();
                 ?>
             </div>
         </div>
