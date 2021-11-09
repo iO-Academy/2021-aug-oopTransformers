@@ -2,6 +2,7 @@
 
 /**
  * USE THIS TEST FILE WISELY, IT TOOK MANY HOURS TO CREATE.
+ * Feel free to use this, but will need to be removed before final version.
  */
 
 require "vendor/autoload.php";
@@ -11,16 +12,18 @@ use Transformers\DB\Hydrator;
 use Transformers\Models\IndexModel;
 use Transformers\Abstracts\Transformer;
 
+$instance = DbConnection::getinstance();
+$connection = $instance->getConnection();
 
-$testinstance = DbConnection::getinstance();
-$connection = $testinstance->getConnection();
+$transformers = Hydrator::populateIndex($connection);
 
-$hydrator = Hydrator::populateIndex($connection);
+$indexModel = IndexModel::getinstance();
+$indexModel->setTransformers($transformers);
 
-$indexmodel = new IndexModel($hydrator);
+$transformerList = $indexModel->transformerList;
 
 echo '<pre>';
-var_dump($indexmodel);
+var_dump($transformerList);
 echo '</pre>';
 
 $Henri = new Transformer();
