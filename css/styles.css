@@ -1,10 +1,4 @@
-body {
-  background-image: url('../assets/images/stars.jpg');
-}
-
-.header {
-  text-align: center;
-}
+/* Import custom fonts */
 
 @font-face {
   font-family: Transformers;
@@ -14,6 +8,25 @@ body {
 @font-face {
   font-family: Optimus;
   src: url(../assets/fonts/Optimus-73lD.ttf);
+}
+
+body {
+  background-image: url('../assets/images/stars.jpg');
+}
+
+/* Hide scrollbar*/
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.header {
+  text-align: center;
 }
 
 h1 {
@@ -30,5 +43,31 @@ h2 {
 }
 
 label {
-  color: white;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer a {
+  color: #ffffff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Cards expand on mouse hover */
+
+.card {
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }

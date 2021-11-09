@@ -10,29 +10,60 @@ use Transformers\Models\IndexModel;
 
 class IndexViewHelper
 {
-    public array $transformerArray = [];
+    private array $transformerList;
 
-    public function __constructor()
+    public function __construct()
     {
+        $this->getTransformers();
+        $this->createTransformersList();
+    }
+
+    /**
+     * Retrieves an array of transformers from the database
+     */
+    private function getTransformers()
+    {
+        // Create db connector
         $instance = DbConnection::getinstance();
         $connection = $instance->getConnection();
+
+        // Hydrate the transformers array
         $transformers = Hydrator::populateIndex($connection);
 
+        // Get IndexModel instance and pass in transformers
         $indexModel = IndexModel::getInstance();
         $indexModel->setTransformers($transformers);
 
-        $this->$transformerArray = $indexModel->$transformerList;
+        $this->transformerList = $indexModel->transformerList;
     }
 
-    public function createTransformerCard(array $transformerArray) {
-        foreach ($transformerArray as $item) {
-            $str = '<div class="card text-center mx-auto d-block mt-3 p-3" style="width: 25rem;">';
-            $str .= '<img src="' . $item['img_url'] . '" width="300" height="500" class="card-img-top">';
-            $str .= '<h2 class="card-title">' . $item['name'] . '</h2>';
-            $str .= '<h4>' . $item['type'] . '</h4>';
-            $str .= '<a href="./details.php?id=' . $item['id'] . '" class="btn btn-primary">More Info</a>';
-            $str .= '</div>';
-            echo $str;
+    /**
+     * Creates a html string with an individual Transformer card
+     * @param array $item
+     * @return string
+     */
+    private function createTransformerCard(array $item): string 
+    {
+        $str = '<a href="./details.php?id=' . $item['id'] . '">';
+        $str .= '<div class="card text-center mx-auto mt-3 p-3" style="width: 20rem;">';
+        $str .= '<img src="' . $item['img_url'] . '" alt="image of ' . $item['name'] . '" class="card-img-top" height="350">';
+        $str .= '<h2 class="card-title">' . $item['name'] . '</h2>';
+        $str .= '<h4>' . $item['type'] . '</h4>';
+        $str .= '</div>';
+        $str .= '</a>';
+        return $str;
+    }
+
+    /**
+     * Creates a html string with all Transformers cards
+     * @return string
+     */
+    public function createTransformersList(): string
+    {
+        $str = "";
+        foreach ($this->transformerList as $item) {
+            $str .= $this->createTransformerCard($item);
         }
+        return $str;
     }
 }
