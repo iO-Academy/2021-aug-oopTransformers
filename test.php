@@ -26,16 +26,10 @@ $indexmodel = new IndexModel($hydrator);
 $outerArray = $indexmodel->transformerList;
 
 foreach ($outerArray as $item) {
-        $str = '<img src="' . $item['img_url'] . '">';
+        $str = '<div class="card">';
+        $str .= '<img src="' . $item['img_url'] . '">';
         $str .= '<h2>' . $item['name'] . '</h2>';
         $str .= '<h4>' . $item['type'] . '</h4>';
+        $str .= '</div>';
         echo $str;
 }
-
-// $Henri = new Transformer();
-
-// $Henri = Hydrator::populateDetails($connection, 1);
-
-// echo '<pre>';
-// var_dump($Henri);
-// echo '</pre>';

@@ -1,24 +1,34 @@
 <?php
 
-namespace Transformers\Abstracts;
+namespace Transformers\viewhelpers;
 
-require "vendor/autoload.php";
+require "../../vendor/autoload.php";
 
 use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
 use Transformers\Models\IndexModel;
-use Transformers\Abstracts\Transformer;
 
 class IndexViewHelper
 {
-    $testinstance = DbConnection::getinstance();
-    $connection = $testinstance->getConnection();
+    private array $transformerList;
 
-    $hydrator = Hydrator::populateIndex($connection);
+    public function __constructor(array $transformerList )
+    {
+        $instance = DbConnection::getinstance();
+        $connection = $instance->getConnection();
+        $transformers = Hydrator::populateIndex($connection);
+        $indexmodel = new IndexModel($transformers);
+        $this->transformerList = $transformerList;
+    }
 
-    $indexmodel = new IndexModel($hydrator);
-
-    echo '<pre>';
-    var_dump($indexmodel);
-    echo '</pre>';
+    public function createTransformerCard() {
+        foreach ($outerArray as $item) {
+            $str = '<div class="card text-center mx-auto d-block" style="width: 25rem;">';
+            $str .= '<img src="' . $item['img_url'] . '" width="300">';
+            $str .= '<h2>' . $item['name'] . '</h2>';
+            $str .= '<h4>' . $item['type'] . '</h4>';
+            $str .= '</div>';
+            echo $str;
+        }
+    }
 }
