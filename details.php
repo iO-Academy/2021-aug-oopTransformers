@@ -1,16 +1,10 @@
 <?php
-require 'src/ViewHelpers/Details.php';
-$testtransformer = [
-    "name" => "Astrotrain",
-    "size" => "16",
-    "speed" => "3",
-    "power" => "45",
-    "disguise" => "5",
-    "top_trumps_rating" => "10",
-    "type" => "Insecticon",
-    "img_url" => "https://static.wikia.nocookie.net/transformers/images/2/29/G1_Astrotrain.jpg"
-];
-$transformerdetails = new Details();
+require 'vendor/autoload.php';
+use Transformers\ViewHelpers\Details;
+
+$id = $_GET['id'];
+$transformer = new Details();
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +18,7 @@ $transformerdetails = new Details();
 <body>
     <h2 class="text-center">Transformers</h2>
     <div class="details-container d-flex justify-content-center align-items-center mx-4">
-        <?php $transformerdetails->createTransformerDetails($testtransformer); ?>
+        <?php $transformer->createTransformerDetails($id); ?>
     </div>
     <div class="text-end p-4">
         <a href="index.php">Return to home</a>
