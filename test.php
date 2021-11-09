@@ -19,14 +19,23 @@ $hydrator = Hydrator::populateIndex($connection);
 
 $indexmodel = new IndexModel($hydrator);
 
-echo '<pre>';
-var_dump($indexmodel);
-echo '</pre>';
+// echo '<pre>';
+// print_r($indexmodel->transformerList);
+// echo '</pre>';
 
-$Henri = new Transformer();
+$outerArray = $indexmodel->transformerList;
 
-$Henri = Hydrator::populateDetails($connection, 1);
+foreach ($outerArray as $item) {
+        $str = '<img src="' . $item['img_url'] . '">';
+        $str .= '<h2>' . $item['name'] . '</h2>';
+        $str .= '<h4>' . $item['type'] . '</h4>';
+        echo $str;
+}
 
-echo '<pre>';
-var_dump($Henri);
-echo '</pre>';
+// $Henri = new Transformer();
+
+// $Henri = Hydrator::populateDetails($connection, 1);
+
+// echo '<pre>';
+// var_dump($Henri);
+// echo '</pre>';
