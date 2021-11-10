@@ -45,10 +45,10 @@ class Details
                     <img class="transformer-details-image" src="$img_url" alt="picture of $name" />
                 </div>
                 <div class="transformer-details mx-5">
-                    <div class="display-5">
-                        <h2>$name</h2>
-                        <p>Type: $type</p>
-                    </div>
+                    <ul class="display-4 list-unstyled">
+                        <li>$name</li>
+                        <li class="display-6">$type</li>
+                    </ul>
                     <ul class="list-unstyled fs-4">
                         <li>Size: $size</li>
                         <li>Speed: $speed</li>

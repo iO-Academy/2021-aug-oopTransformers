@@ -36,6 +36,8 @@
 .details-container {
   background-color: #ffffff;
   width: 75%;
+  min-height: 80vh;
+  border-radius: 5px;
 }
 
 .transformer-details-image {
