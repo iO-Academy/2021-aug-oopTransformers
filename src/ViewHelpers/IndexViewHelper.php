@@ -1,8 +1,8 @@
 <?php
 
-namespace Transformers\viewhelpers;
+namespace Transformers\ViewHelpers;
 
-require "vendor/autoload.php";
+//require "../../vendor/autoload.php";
 
 use PDO;
 use Transformers\DB\DbConnection;
@@ -13,7 +13,7 @@ use Transformers\services\Search;
 class IndexViewHelper
 {
     private array $transformerList;
-    private PDO $connection;
+    private \PDO $connection;
 
     public function __construct()
     {
