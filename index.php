@@ -4,6 +4,7 @@ require "vendor/autoload.php";
 use Transformers\viewhelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
+$indexViewHelper->searchTransformers('Gr');
 
 ?>
 
