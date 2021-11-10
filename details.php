@@ -29,8 +29,8 @@ $transformer = new Details();
             <?php echo $transformer->createTransformerDetails($id); ?>
         </div>
     </div>
-    <div class="text-lg-end text-center p-lg-4 mt-lg-5 me-lg-5">
-        <a href="index.php" class="home-button text-decoration-none">RETURN TO HOME<i class="fas fa-home"></i></a>
+    <div class="text-lg-end text-center p-lg-4 me-lg-5">
+        <a href="index.php" class="home-button text-decoration-none"><i class="fas fa-home"></i></a>
     </div>
 </body>
 </html>

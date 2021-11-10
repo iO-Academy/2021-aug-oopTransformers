@@ -41,22 +41,22 @@ class Details
         $type = $this->transformer->type;
         $img_url = $this->transformer->img_url;
 
-        $str = "<div class='m-xl-5 m-4'>
-                    <img class='transformer-details-image' src='$img_url' alt='picture of $name' />
+        $str = '<div class="m-xl-5 m-4">
+                    <img class="transformer-details-image" src="$img_url" alt="picture of $name" />
                 </div>
-                <div class='transformer-details mx-5'>
-                    <div class='display-5'>
+                <div class="transformer-details mx-5">
+                    <div class="display-5">
                         <h2>$name</h2>
                         <p>Type: $type</p>
                     </div>
-                <ul class='list-unstyled fs-4'>
-                    <li>Size: $size</li>
-                    <li>Speed: $speed</li>
-                    <li>Power: $power</li>
-                    <li>Disguise: $disguise</li>
-                    <li>Top Trumps Rating: $top_trumps_rating</li>
-                </ul>
-                </div>";
+                    <ul class="list-unstyled fs-4">
+                        <li>Size: $size</li>
+                        <li>Speed: $speed</li>
+                        <li>Power: $power</li>
+                        <li>Disguise: $disguise</li>
+                        <li>Top Trumps Rating: $top_trumps_rating</li>
+                    </ul>
+                </div>';
 
         return $str;
     }
