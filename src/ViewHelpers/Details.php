@@ -46,7 +46,7 @@ class Details
                 </div>
                 <div class='transformer-details mx-5'>
                     <ul class='display-4 list-unstyled'>
-                        <li>$name</li>
+                        <h2>$name</h2>
                         <li class='display-6'>$type</li>
                     </ul>
                     <ul class='list-unstyled fs-4'>
