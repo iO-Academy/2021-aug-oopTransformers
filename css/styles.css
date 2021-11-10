@@ -2,18 +2,40 @@
   text-align: center;
 }
 
+body {
+  background: #e1eec3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .details-container {
-  background-color: #808080;
-  height: 75vh;
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  width: 75%;
 }
 
 .transformer-details-image {
+  display: flex;
   height: 25rem;
   width: 25rem;
 }
 
+@media only screen and (max-width: 1000px) {
+  .transformer-details-image {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
 .transformer-details {
+  display: flex;
+  flex-direction: column;
   font-family: Optimus;
+  margin-left: 20rem;
 }
 
 @font-face {
@@ -26,12 +48,21 @@
   src: url(../assets/fonts/Optimus-73lD.ttf);
 }
 
-h1 {
-  font-family: Transformers;
-  font-size: 8rem;
+h2 {
+  font-family: Optimus;
+  font-size: 2rem;
 }
 
-h2 {
-  font-family: Transformers;
-  font-size: 4rem;
+.home-button {
+  font-family: Optimus;
+  font-size: 2rem;
+  color: black;
+}
+
+.home-button:visited {
+  color: black;
+}
+
+.home-button:hover {
+  color: #00000096;
 }
