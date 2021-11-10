@@ -13,10 +13,4 @@ class Transformer
     public int $top_trumps_rating;
     public string $type;
     public string $img_url;
-
-//    public function __construct(array $transformer)
-//    {}
-
-
-
 }
