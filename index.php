@@ -4,7 +4,13 @@ require "vendor/autoload.php";
 use Transformers\viewhelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
-$indexViewHelper->searchTransformers('Gr');
+
+if(isset($_GET['search'])) {
+    $search = $_GET['search'];
+    $indexViewHelper->searchTransformers($search);
+} else {
+    $search = '';
+}
 
 ?>
 
@@ -30,9 +36,9 @@ $indexViewHelper->searchTransformers('Gr');
             <div class="d-flex justify-content-around">
                 <div class="col-1"></div>
                 <div class="search-container col-4 d-flex">
-                    <form class="pe-2">
+                    <form class="pe-2" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
                         <img src="assets/images/search.svg" width="25px">
-                        <input type="text" placeholder="Search..."></input>
+                        <input type="text" placeholder="Search..." value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search"></input>
                         <button type="submit" class="btn btn-primary">Search</button>
                     </form>
                     <a href="index.php"><button class="btn btn-primary">Clear</button></a>
@@ -56,7 +62,14 @@ $indexViewHelper->searchTransformers('Gr');
             </div>
 
             <div class="card-container d-flex flex-wrap justify-content-between m-3">
-                <?php echo $indexViewHelper->createTransformersList(); ?>
+                <?php if (strlen($indexViewHelper->createTransformersList()) == 0) {
+                    echo '<div class="card text-center mx-auto mt-3 p-3" style="width: 20rem;">
+                            <h4>No results found</h4>
+                            <img src="assets/images/megatron.gif" alt="Laughing Megaton">
+                            </div>';
+                } else {
+                    echo $indexViewHelper->createTransformersList();
+                } ?>
             </div>
         </main>
         <footer>
