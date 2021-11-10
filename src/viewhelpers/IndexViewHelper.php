@@ -4,18 +4,24 @@ namespace Transformers\viewhelpers;
 
 require "vendor/autoload.php";
 
+use PDO;
 use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
 use Transformers\Models\IndexModel;
+use Transformers\services\Search;
 
 class IndexViewHelper
 {
     private array $transformerList;
+    private PDO $connection;
 
     public function __construct()
     {
+        // Create db connector
+        $instance = DbConnection::getinstance();
+        $this->connection = $instance->getConnection();
+
         $this->getTransformers();
-        $this->createTransformersList();
     }
 
     /**
@@ -23,12 +29,8 @@ class IndexViewHelper
      */
     private function getTransformers()
     {
-        // Create db connector
-        $instance = DbConnection::getinstance();
-        $connection = $instance->getConnection();
-
         // Hydrate the transformers array
-        $transformers = Hydrator::populateIndex($connection);
+        $transformers = Hydrator::populateIndex($this->connection);
 
         // Get IndexModel instance and pass in transformers
         $indexModel = IndexModel::getInstance();
@@ -65,5 +67,11 @@ class IndexViewHelper
             $str .= $this->createTransformerCard($item);
         }
         return $str;
+    }
+
+    public function searchTransformers(string $search): void
+    {
+        // Search
+        $this->transformerList = Search::searchTransformers($this->connection, $search);
     }
 }
