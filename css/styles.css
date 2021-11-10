@@ -36,7 +36,7 @@
 .details-container {
   background-color: #ffffff;
   width: 75%;
-  min-height: 80vh;
+  min-height: 55vh;
   border-radius: 5px;
 }
 
@@ -117,10 +117,10 @@ footer a {
 
 /* Media Queries */
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
   .transformer-details-image {
-    height: 15rem;
-    width: 15rem;
+    height: 17rem;
+    width: 17rem;
   }
 }
 
