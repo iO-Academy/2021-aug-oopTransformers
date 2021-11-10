@@ -35,6 +35,7 @@ h1 {
   background: -webkit-linear-gradient(#1b2a87, #c20f02);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
 h2 {
@@ -54,6 +55,10 @@ a:hover {
   color: #c20f02;
 }
 
+.form-banner {
+  background: #000000d9;
+}
+
 footer a {
   color: #ffffff;
   position: fixed;
@@ -70,10 +75,15 @@ footer a {
     0.3s box-shadow,
     0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
   cursor: pointer;
+  width: 20rem;
 }
 
 .card:hover {
   transform: scale(1.05);
+}
+
+.error-card {
+  cursor: default;
 }
 
 @media only screen and (max-width: 850px) {
@@ -85,5 +95,11 @@ footer a {
 @media only screen and (max-width: 650px) {
   h1 {
     font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  h1 {
+    font-size: 4rem;
   }
 }

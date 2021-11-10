@@ -1,6 +1,6 @@
 <?php
 
-namespace Transformers\services;
+namespace Transformers\Services;
 
 class Search
 {
