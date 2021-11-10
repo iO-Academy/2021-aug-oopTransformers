@@ -23,14 +23,14 @@ $transformer = new Details();
     <script src="https://kit.fontawesome.com/d9cf2b67c4.js" crossorigin="anonymous"></script>
 </head>
 <body class="details-body">
-<h2 class="text-center">Transformers</h2>
-<div>
-    <div class="details-container d-flex flex-column flex-md-row justify-content-center align-items-center m-auto mh-60">
-        <?php echo $transformer->createTransformerDetails($id); ?>
+    <h1 class="text-center">Transformers</h1>
+    <div>
+        <div class="details-container d-flex flex-column flex-md-row justify-content-center align-items-center m-auto mh-60">
+            <?php echo $transformer->createTransformerDetails($id); ?>
+        </div>
     </div>
-</div>
-<div class="text-lg-end text-center p-lg-4 mt-lg-5 me-lg-5">
-    <a href="index.php" class="home-button text-decoration-none">Return to Home <i class="fas fa-home"></i></a>
-</div>
+    <div class="text-lg-end text-center p-lg-4 mt-lg-5 me-lg-5">
+        <a href="index.php" class="home-button text-decoration-none">RETURN TO HOME<i class="fas fa-home"></i></a>
+    </div>
 </body>
 </html>

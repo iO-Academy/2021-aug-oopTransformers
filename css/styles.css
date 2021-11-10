@@ -30,30 +30,25 @@
 /* Details */
 
 .details-body {
-  background: #e1eec3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('../assets/images/stars.jpg');
 }
 
 .details-container {
-  background: #bdc3c7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-color: #000000;
-  border-width: 5px;
-  border-style: solid;
+  background-color: #ffffff;
+  /* border-width: 5px; */
+  /* border-style: solid; */
   width: 75%;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .transformer-details-image {
   display: flex;
   height: 25rem;
   width: 25rem;
-  border-radius: 5px;
+  /* border-radius: 5px;
   border-color: #000000;
   border-width: 1px;
-  border-style: solid;
+  border-style: solid; */
 }
 
 .transformer-details {
@@ -66,15 +61,15 @@
 .home-button {
   font-family: Optimus;
   font-size: 2rem;
-  color: #000000;
+  color: #ffffff;
 }
 
 .home-button:visited {
-  color: #000000;
+  color: #ffffff;
 }
 
 .home-button:hover {
-  color: #00000096;
+  color: #ffffff;
 }
 
 body {
