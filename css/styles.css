@@ -1,0 +1,37 @@
+.header {
+  text-align: center;
+}
+
+.details-container {
+  background-color: #808080;
+  height: 75vh;
+}
+
+.transformer-details-image {
+  height: 25rem;
+  width: 25rem;
+}
+
+.transformer-details {
+  font-family: Optimus;
+}
+
+@font-face {
+  font-family: Transformers;
+  src: url(../assets/fonts/TransformersMovie-y9Ad.ttf);
+}
+
+@font-face {
+  font-family: Optimus;
+  src: url(../assets/fonts/Optimus-73lD.ttf);
+}
+
+h1 {
+  font-family: Transformers;
+  font-size: 8rem;
+}
+
+h2 {
+  font-family: Transformers;
+  font-size: 4rem;
+}
