@@ -26,9 +26,11 @@ $indexViewHelper = new IndexViewHelper();
                 <h1>Transformers</h1>
             </div>
 
-            <div class="d-flex justify-content-around">
-                <div class="col-1"></div>
-                <div class="search-container col-4 d-flex">
+            <div class="row">
+
+                <div class="col-lg-1 col-sm-0"></div>
+
+                <div class="search-container col-lg-4 col-sm-12 d-flex justify-content-center">
                     <form class="pe-2">
                         <img src="assets/images/search.svg" width="25px">
                         <input type="text" placeholder="Search..."></input>
@@ -37,24 +39,25 @@ $indexViewHelper = new IndexViewHelper();
                     <a href="index.php"><button class="btn btn-primary">Clear</button></a>
                 </div>
 
-                <div class="filter-select col-2 form-check form-switch d-flex justify-content-center">
+                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Autobots</label>
                 </div>
 
-                <div class="filter-select col-2 form-check form-switch d-flex justify-content-center">
+                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Insecticons</label>
                 </div>
 
-                <div class="filter-select col-2 form-check form-switch d-flex justify-content-center">
+                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Decepticons</label>
                 </div>
-                <div class="col-1"></div>
+                <div class="col-lg-1 col-sm-0"></div>
+
             </div>
 
-            <div class="card-container d-flex flex-wrap justify-content-between m-3">
+            <div class="card-container d-flex flex-wrap justify-content-evenly m-3">
                 <?php echo $indexViewHelper->createTransformersList(); ?>
             </div>
         </main>
