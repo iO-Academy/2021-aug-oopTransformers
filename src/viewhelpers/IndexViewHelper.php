@@ -8,6 +8,7 @@ use PDO;
 use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
 use Transformers\Models\IndexModel;
+use Transformers\services\Filter;
 use Transformers\services\Search;
 
 class IndexViewHelper
@@ -74,4 +75,17 @@ class IndexViewHelper
         // Search
         $this->transformerList = Search::searchTransformers($this->connection, $search);
     }
+
+    public function filterInsecticons(): void
+    {
+        // Filter Insecticons
+        $this->transformerList = Filter::filterInsecticons($this->connection);
+    }
+
+    public function filterAutobots(): void
+    {
+        // Filter Autobots
+        $this->transformerList = Filter::filterAutobots($this->connection);
+    }
+
 }

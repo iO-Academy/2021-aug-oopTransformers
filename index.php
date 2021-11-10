@@ -11,6 +11,14 @@ if(isset($_GET['search'])) {
 } else {
     $search = '';
 }
+
+if(isset($_GET['insecticons'])) {
+    $indexViewHelper->filterInsecticons();
+}
+if(isset($_GET['autobots'])) {
+    $indexViewHelper->filterAutobots();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,20 +44,26 @@ if(isset($_GET['search'])) {
 
                 <div class="col-lg-1 col-sm-0"></div>
 
-                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
-                    <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Autobots</label>
-                </div>
+                <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
+                    <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" name="autobots" checked></input>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Autobots</label>
+                    </div>
 
-                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
-                    <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Insecticons</label>
-                </div>
+                    <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" name="insecticons" checked></input>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Insecticons</label>
+                    </div>
 
-                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
-                    <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Decepticons</label>
-                </div>
+                    <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" name="decepticons" checked></input>
+                        <label class="form-check-label" for="flexSwitchCheckChecked">Decepticons</label>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-search"></i><span> Apply Filter</span>
+                    </button>
+                </form>
 
                 <div class="search-container col-lg-4 col-sm-12 d-flex justify-content-center">
                     <form class="pe-2 input-group" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
