@@ -45,17 +45,17 @@ class Details
                     <img class='transformer-details-image' src='$img_url' alt='picture of $name' />
                 </div>
                 <div class='transformer-details mx-5'>
-                    <div class='display-5'>
-                        <p>$name</p>
-                        <p>Type: $type</p>
-                    </div>
-                <ul class='list-unstyled fs-4'>
-                    <li>Size: $size</li>
-                    <li>Speed: $speed</li>
-                    <li>Power: $power</li>
-                    <li>Disguise: $disguise</li>
-                    <li>Top Trumps Rating: $top_trumps_rating</li>
-                </ul>
+                    <ul class='display-4 list-unstyled'>
+                        <li>$name</li>
+                        <li class='display-6'>$type</li>
+                    </ul>
+                    <ul class='list-unstyled fs-4'>
+                        <li>Size: $size</li>
+                        <li>Speed: $speed</li>
+                        <li>Power: $power</li>
+                        <li>Disguise: $disguise</li>
+                        <li>Top Trumps Rating: $top_trumps_rating</li>
+                    </ul>
                 </div>";
 
         return $str;

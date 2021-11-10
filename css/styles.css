@@ -16,6 +16,7 @@
   border-width: 5px;
   border-style: solid;
   width: 75%;
+  min-height: 80vh;
   border-radius: 5px;
 }
 
