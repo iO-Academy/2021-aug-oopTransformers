@@ -11,7 +11,6 @@ if(isset($_GET['search'])) {
 } else {
     $search = '';
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -33,35 +32,43 @@ if(isset($_GET['search'])) {
                 <h1>Transformers</h1>
             </div>
 
-            <div class="d-flex justify-content-around">
-                <div class="col-1"></div>
-                <div class="search-container col-4 d-flex">
-                    <form class="pe-2" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
-                        <img src="assets/images/search.svg" width="25px">
-                        <input type="text" placeholder="Search..." value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search"></input>
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </form>
-                    <a href="index.php"><button class="btn btn-primary">Clear</button></a>
-                </div>
+            <div class="row">
 
-                <div class="filter-select col-2 form-check form-switch d-flex justify-content-center">
+                <div class="col-lg-1 col-sm-0"></div>
+
+                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Autobots</label>
                 </div>
 
-                <div class="filter-select col-2 form-check form-switch d-flex justify-content-center">
+                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Insecticons</label>
                 </div>
 
-                <div class="filter-select col-2 form-check form-switch d-flex justify-content-center">
+                <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
                     <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked></input>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Decepticons</label>
                 </div>
-                <div class="col-1"></div>
+
+                <div class="search-container col-lg-4 col-sm-12 d-flex justify-content-center">
+                    <form class="pe-2 input-group" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
+                        <input type="text" class="form-control" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-search"></i><span> Search</span>
+                            </button>
+                        </div>
+                    </form>
+                    <a href="index.php"><button class="btn btn-primary">Clear</button></a>
+
+                <div class="col-lg-1 col-sm-0"></div>
+
+                </div>
+
             </div>
 
-            <div class="card-container d-flex flex-wrap justify-content-between m-3">
+            <div class="card-container d-flex flex-wrap justify-content-evenly m-3">
                 <?php if (strlen($indexViewHelper->createTransformersList()) == 0) {
                     echo '<div class="card text-center mx-auto mt-3 p-3" style="width: 20rem;">
                             <h4>No results found</h4>
