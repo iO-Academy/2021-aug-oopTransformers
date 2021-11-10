@@ -22,7 +22,7 @@ $transformer = new Details();
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/d9cf2b67c4.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="details-body">
 <h2 class="text-center">Transformers</h2>
 <div>
     <div class="details-container d-flex flex-column flex-md-row justify-content-center align-items-center m-auto mh-60">
