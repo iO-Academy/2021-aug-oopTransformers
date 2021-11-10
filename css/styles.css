@@ -1,6 +1,33 @@
+/* Import custom fonts */
+
+@font-face {
+  font-family: Transformers;
+  src: url(../assets/fonts/TransformersMovie-y9Ad.ttf);
+}
+
+@font-face {
+  font-family: Optimus;
+  src: url(../assets/fonts/Optimus-73lD.ttf);
+}
+
 .header {
   text-align: center;
 }
+
+/* Cards expand on mouse hover */
+
+.card {
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Details */
 
 .details-body {
   background: #e1eec3;  /* fallback for old browsers */
@@ -29,33 +56,11 @@
   border-style: solid;
 }
 
-@media only screen and (max-width: 1000px) {
-  .transformer-details-image {
-    height: 15rem;
-    width: 15rem;
-  }
-}
-
 .transformer-details {
   display: flex;
   flex-direction: column;
   font-family: Optimus;
   margin-left: 20rem;
-}
-
-@font-face {
-  font-family: Transformers;
-  src: url(../assets/fonts/TransformersMovie-y9Ad.ttf);
-}
-
-@font-face {
-  font-family: Optimus;
-  src: url(../assets/fonts/Optimus-73lD.ttf);
-}
-
-h2 {
-  font-family: Optimus;
-  font-size: 2rem;
 }
 
 .home-button {
@@ -70,4 +75,74 @@ h2 {
 
 .home-button:hover {
   color: #00000096;
+}
+
+body {
+  background-image: url('../assets/images/stars.jpg');
+}
+
+/* Hide scrollbar*/
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+h1 {
+  font-family: Transformers;
+  font-size: 8rem;
+  background: -webkit-linear-gradient(#1b2a87, #c20f02);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-family: Optimus;
+  font-size: 2rem;
+}
+
+label {
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c20f02;
+}
+
+footer a {
+  color: #ffffff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1000px) {
+  .transformer-details-image {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  h1 {
+    font-size: 5rem;
+  }
 }
