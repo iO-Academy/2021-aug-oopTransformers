@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+//namespace Transformers\Models\tests;
 require_once '../DetailsModel.php';
 use Transformers\Models\DetailsModel;
 require_once '../../Abstracts/Transformer.php';
