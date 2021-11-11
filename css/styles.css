@@ -1,0 +1,105 @@
+/* Import custom fonts */
+
+@font-face {
+  font-family: Transformers;
+  src: url(../assets/fonts/TransformersMovie-y9Ad.ttf);
+}
+
+@font-face {
+  font-family: Optimus;
+  src: url(../assets/fonts/Optimus-73lD.ttf);
+}
+
+body {
+  background-image: url('../assets/images/stars.jpg');
+}
+
+/* Hide scrollbar*/
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.header {
+  text-align: center;
+}
+
+h1 {
+  font-family: Transformers;
+  font-size: 8rem;
+  background: -webkit-linear-gradient(#1b2a87, #c20f02);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+h2 {
+  font-family: Optimus;
+  font-size: 2rem;
+}
+
+label {
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c20f02;
+}
+
+.form-banner {
+  background: #000000d9;
+}
+
+footer a {
+  color: #ffffff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Cards expand on mouse hover */
+
+.card {
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+  width: 20rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.error-card {
+  cursor: default;
+}
+
+@media only screen and (max-width: 850px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/*@media only screen and (max-width: 450px) {*/
+/*  h1 {*/
+/*    font-size: 4rem;*/
+/*  }*/
+/*}*/
