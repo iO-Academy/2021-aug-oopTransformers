@@ -6,7 +6,6 @@ require ('../../../vendor/autoload.php');
 use PHPUnit\Framework\TestCase;
 use Transformers\ViewHelpers\IndexViewHelper;
 
-
 class IndexViewHelperTest extends TestCase
 {
     public function testCreateTransformersList_ReturnsValidString()
