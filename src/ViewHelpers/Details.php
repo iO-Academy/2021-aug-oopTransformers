@@ -2,7 +2,7 @@
 
 namespace Transformers\ViewHelpers;
 
-use Transformers\Abstracts\Transformer;
+use Transformers\Entities\Transformer;
 use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
 

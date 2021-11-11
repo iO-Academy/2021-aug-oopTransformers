@@ -1,6 +1,6 @@
 <?php
 
-namespace Transformers\Abstracts;
+namespace Transformers\Entities;
 
 class Transformer
 {

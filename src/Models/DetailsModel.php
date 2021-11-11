@@ -1,12 +1,12 @@
 <?php
 
 namespace Transformers\Models;
-use Transformers\Abstracts\Transformer;
+use Transformers\Entities\Transformer;
 
 class DetailsModel
 {
     private Transformer $transformerDetails;
-    
+
     /**
      * Setter for transformer object
      * @param Transformer $transformer

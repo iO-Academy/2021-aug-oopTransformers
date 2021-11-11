@@ -3,7 +3,7 @@ declare(strict_types=1);
 require_once '../DetailsModel.php';
 use Transformers\Models\DetailsModel;
 require_once '../../Abstracts/Transformer.php';
-use Transformers\Abstracts\Transformer;
+use Transformers\Entities\Transformer;
 use PHPUnit\Framework\TestCase;
 
 
