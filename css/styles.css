@@ -10,6 +10,66 @@
   src: url(../assets/fonts/Optimus-73lD.ttf);
 }
 
+.header {
+  text-align: center;
+}
+
+.row {
+  --bs-gutter-x: 0;
+}
+
+/* Cards expand on mouse hover */
+
+.card {
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Details */
+
+.details-body {
+  background-image: url('../assets/images/stars.jpg');
+}
+
+.details-container {
+  background-color: #ffffff;
+  width: 75%;
+  min-height: 55vh;
+  border-radius: 5px;
+}
+
+.transformer-details-image {
+  display: flex;
+  height: 25rem;
+  width: 25rem;
+}
+
+.transformer-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rem;
+}
+
+.transformer-details h2 {
+  font-size: 3rem;
+}
+
+.home-button {
+  font-family: Optimus;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.home-button:hover {
+  color: #c20f02;
+}
+
 body {
   background-image: url('../assets/images/stars.jpg');
 }
@@ -25,16 +85,13 @@ body {
   scrollbar-width: none;
 }
 
-.header {
-  text-align: center;
-}
-
 h1 {
   font-family: Transformers;
   font-size: 8rem;
   background: -webkit-linear-gradient(#1b2a87, #c20f02);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
 h2 {
@@ -54,6 +111,14 @@ a:hover {
   color: #c20f02;
 }
 
+.form-banner {
+  background: #000000d9;
+}
+
+.error-card {
+  cursor: default;
+}
+
 footer a {
   color: #ffffff;
   position: fixed;
@@ -63,17 +128,13 @@ footer a {
   border-radius: 5px;
 }
 
-/* Cards expand on mouse hover */
+/* Media Queries */
 
-.card {
-  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
-    0.3s box-shadow,
-    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.05);
+@media only screen and (max-width: 1400px) {
+  .transformer-details-image {
+    height: 17rem;
+    width: 17rem;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -84,6 +145,6 @@ footer a {
 
 @media only screen and (max-width: 650px) {
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
