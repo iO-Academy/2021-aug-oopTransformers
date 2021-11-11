@@ -1,0 +1,16 @@
+<?php
+
+namespace Transformers\Entities;
+
+class Transformer
+{
+    private int $id;
+    private string $name;
+    private int $size;
+    private int $speed;
+    private int $power;
+    private int $disguise;
+    private int $top_trumps_rating;
+    private string $type;
+    private string $img_url;
+}
