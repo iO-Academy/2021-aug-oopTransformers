@@ -76,6 +76,11 @@ class IndexViewHelper
         $this->transformerList = Search::searchTransformers($this->connection, $search);
     }
 
+    /**
+     * FILTER EXPERIMENT (Not yet working, and Decepticons not included yet)
+     * Creates a html string with filtered Transformers cards
+     * @return string
+     */
     public function filterInsecticons(): void
     {
         // Filter Insecticons

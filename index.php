@@ -12,10 +12,11 @@ if(isset($_GET['search'])) {
     $search = '';
 }
 
+//Test filters:
 if(isset($_GET['insecticons'])) {
     $indexViewHelper->filterInsecticons();
 }
-if(isset($_GET['autobots'])) {
+elseif(isset($_GET['autobots'])) {
     $indexViewHelper->filterAutobots();
 }
 

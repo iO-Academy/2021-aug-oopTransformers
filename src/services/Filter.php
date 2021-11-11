@@ -18,3 +18,5 @@ class Filter
         return $query->fetchAll();
     }
 }
+
+//NOTE: Decepticons not included yet
