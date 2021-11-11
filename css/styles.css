@@ -87,6 +87,7 @@ h1 {
   background: -webkit-linear-gradient(#1b2a87, #c20f02);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
 h2 {
@@ -106,6 +107,10 @@ a:hover {
   color: #c20f02;
 }
 
+.form-banner {
+  background: #000000d9;
+}
+
 footer a {
   color: #ffffff;
   position: fixed;
@@ -113,6 +118,10 @@ footer a {
   right: 20px;
   text-decoration: none;
   border-radius: 5px;
+}
+
+.error-card {
+  cursor: default;
 }
 
 /* Media Queries */
