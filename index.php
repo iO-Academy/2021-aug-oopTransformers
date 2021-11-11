@@ -1,7 +1,7 @@
 <?php
 require "vendor/autoload.php";
 
-use Transformers\viewhelpers\IndexViewHelper;
+use Transformers\ViewHelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
 
@@ -13,12 +13,12 @@ $indexViewHelper = new IndexViewHelper();
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Transformers</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/jpg" href="assets/images/autobot-logo.png"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
+        <title>Transformers</title>
     </head>
     <body>
         <main class="container-fluid d-flex flex-column flex-wrap" id="homePage">
