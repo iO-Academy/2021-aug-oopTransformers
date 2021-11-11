@@ -17,7 +17,7 @@ if(isset($_GET['search'])) {
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,44 +27,51 @@ if(isset($_GET['search'])) {
         <link rel="shortcut icon" type="image/jpg" href="assets/images/autobot-logo.png"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     </head>
     <body>
-        <main class="container-fluid d-flex flex-column flex-wrap" id="homePage">
+        <main class="d-flex flex-column flex-wrap" id="homePage">
 
-            <div class="row d-flex align-items-center py-4 px-5 form-banner">
-                <div class="form-group col-lg-6 col-sm-12 d-flex justify-content-between p-2">
+            <nav class="px-lg-5 px-sm-1 form-banner">
 
-                    <div class="filter-select col-lg-4 col-sm-4 form-check form-switch d-flex justify-content-center">
+                <form class="row d-flex" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
+
+                    <div class="col-lg-4 col-sm-12 mx-auto my-4">
+                        <div class="input-group px-4">
+                            <div class="input-group-text"><i class="bi bi-search"></i></div>
+                            <label for="search" class="invisible"></label>
+                            <input type="text" class="form-control" id="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
+                        </div>
+                    </div>
+
+                    <div class="filter-select my-4 col-lg-2 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
                         <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Autobots</label>
                     </div>
 
-                    <div class="filter-select col-lg-4 col-sm-4 form-check form-switch d-flex justify-content-center">
+                    <div class="filter-select my-4 col-lg-2 col-sm-4 my-auto form-check form-switch d-flex justify-content-center align-content-center">
                         <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Insecticons</label>
                     </div>
 
-                    <div class="filter-select col-lg-4 col-sm-4 form-check form-switch d-flex justify-content-center">
+                    <div class="filter-select my-4 col-lg-2 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
                         <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Decepticons</label>
                     </div>
 
-                </div>
-
-                <div class="search-container col-lg-6 col-sm-12 d-flex justify-content-center">
-                    <form class="pe-2 input-group" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
-                        <input type="text" class="form-control" placeholder="Seaspray" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i><span> Search</span>
-                            </button>
+                    <div class="col-lg-2 d-flex justify-content-between px-5">
+                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center">
+                            <button class="m-4 btn btn-primary" type="submit">Submit</button>
                         </div>
-                    </form>
-                    <a href="index.php"><button class="btn btn-primary">Clear</button></a>
 
-                </div>
-            </div>
+                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-around">
+                            <a href="index.php"><button class="my-4 btn btn-primary">Reset</button></a>
+                        </div>
+                    </div>
+
+                </form>
+            </nav>
+
             <div class="header row d-flex">
                 <h1>Transformers</h1>
             </div>
@@ -74,7 +81,7 @@ if(isset($_GET['search'])) {
                     echo '<div class="card text-center mx-auto m-3 p-3 error-card">
                             <h4>No Transformers found</h4>
                             <p>(Not even in disguise)</p>
-                            <img src="assets/images/transformers-optimus-prime.gif" alt="Laughing Megaton">
+                            <img src="assets/images/transformers-optimus-prime.gif" alt="Transformer gif">
                             <div class="mt-3">
                             <a href="index.php" class="btn btn-primary m-top-2">Reset search</a>
                             </div>
