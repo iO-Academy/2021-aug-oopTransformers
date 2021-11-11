@@ -13,7 +13,7 @@ use Transformers\Services\Search;
 class IndexViewHelper
 {
     private array $transformerList;
-    private PDO $connection;
+    private \PDO $connection;
 
     public function __construct()
     {
@@ -33,10 +33,10 @@ class IndexViewHelper
         $transformers = Hydrator::populateIndex($this->connection);
 
         // Get IndexModel instance and pass in transformers
-        $indexModel = IndexModel::getInstance();
-        $indexModel->setTransformers($transformers);
+//        $indexModel = IndexModel::getInstance();
+//        $indexModel->setTransformers($transformers);
 
-        $this->transformerList = $indexModel->transformerList;
+        $this->transformerList = $transformers;
     }
 
     /**
@@ -62,7 +62,7 @@ class IndexViewHelper
      */
     public function createTransformersList(): string
     {
-        $str = "";
+        $str = '';
         foreach ($this->transformerList as $item) {
             $str .= $this->createTransformerCard($item);
         }
