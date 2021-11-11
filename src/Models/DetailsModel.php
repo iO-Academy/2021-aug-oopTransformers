@@ -5,13 +5,8 @@ use Transformers\Abstracts\Transformer;
 
 class DetailsModel
 {
-    public Transformer $transformerDetails;
-
-    public function __construct()
-    {
-
-    }
-
+    private Transformer $transformerDetails;
+    
     /**
      * Setter for transformer object
      * @param Transformer $transformer

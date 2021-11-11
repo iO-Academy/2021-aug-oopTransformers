@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-//namespace Transformers\Models\tests;
 require_once '../DetailsModel.php';
 use Transformers\Models\DetailsModel;
 require_once '../../Abstracts/Transformer.php';
@@ -47,7 +46,7 @@ class DetailsModelTest extends TestCase
         $this->expectException(TypeError::class);
         $result = $DetailsModel->setTransformer($stub);
     }
-    public function testSetTransformer_ThrowsException_GivenValidObject()
+    public function testSetTransformer_GivenValidObject()
     {
         $DetailsModel = new DetailsModel();
         $stub = $this->createMock(Transformer::class);
