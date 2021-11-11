@@ -69,9 +69,13 @@ class IndexViewHelper
         return $str;
     }
 
-    public function searchTransformers(string $search): void
+    /**
+     * Filter and search transformers
+     * @return string
+     */
+    public function searchFilterTransformers(string $search, string $filter): void
     {
         // Search
-        $this->transformerList = Search::searchTransformers($this->connection, $search);
+        $this->transformerList = Search::searchFilterTransformers($this->connection, $search, $filter);
     }
 }

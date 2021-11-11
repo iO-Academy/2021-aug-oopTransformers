@@ -5,19 +5,42 @@ use Transformers\ViewHelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
 
-if(isset($_GET['search'])) {
-    $search = $_GET['search'];
-    $trimmedSearch = trim($search);
-    $rawSearch = htmlentities($trimmedSearch);
-    $indexViewHelper->searchTransformers($trimmedSearch);
-} else {
-    $search = '';
+$decepticons = 'decepticon';
+$autobots = 'autobot';
+$insecticons = 'insecticon';
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+    $autobots = $_GET['filter-autobot'] ?? '';
+    $decepticons = $_GET['filter-decepticon'] ?? '';
+    $insecticons = $_GET['filter-insecticon'] ?? '';
+
+    if(isset($_GET['search'])) {
+        $search = $_GET['search'];
+        $filters = [];
+        if (isset($_GET['filter-autobot'])) {
+            $autobots = $_GET["filter-autobot"];
+            $filters[] = $_GET['filter-autobot'];
+        }
+        if (isset($_GET['filter-insecticon'])) {
+            $insecticons = $_GET["filter-insecticon"];
+            $filters[] = $_GET['filter-insecticon'];
+        }
+        if (isset($_GET['filter-decepticon'])) {
+            $decepticons = $_GET["filter-decepticon"];
+            $filters[] = $_GET['filter-decepticon'];
+        }
+        $filter = implode(',', $filters);
+        $indexViewHelper->searchFilterTransformers($search, $filter);
+    } else {
+        $search = '';
+    }
 }
 ?>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/html">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +50,7 @@ if(isset($_GET['search'])) {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+        <title>Transformers</title>
     </head>
     <body>
         <main class="d-flex flex-column flex-wrap" id="homePage">
@@ -44,17 +68,17 @@ if(isset($_GET['search'])) {
                     </div>
 
                     <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="autobot" name="filter-autobot" <?php if (isset($autobots) && $autobots=="autobot") echo "checked";?>>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Autobots</label>
                     </div>
 
                     <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center align-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="insecticon" name="filter-insecticon" <?php if (isset($insecticons) && $insecticons=="insecticon") echo "checked";?>>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Insecticons</label>
                     </div>
 
                     <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="decepticon" name="filter-decepticon" <?php if (isset($decepticons) && $decepticons=="decepticon") echo "checked";?>>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Decepticons</label>
                     </div>
 
