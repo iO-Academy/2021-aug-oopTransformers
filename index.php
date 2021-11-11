@@ -5,7 +5,7 @@ use Transformers\ViewHelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
 
-if(isset($_GET['search'])) {
+if (isset($_GET['search'])) {
     $search = $_GET['search'];
     $trimmedSearch = trim($search);
     $rawSearch = htmlentities($trimmedSearch);
@@ -17,7 +17,7 @@ if(isset($_GET['search'])) {
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/html">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
