@@ -17,16 +17,25 @@ $connection = $testinstance->getConnection();
 
 $hydrator = Hydrator::populateIndex($connection);
 
-$indexmodel = new IndexModel($hydrator);
+// $indexmodel = new IndexModel($hydrator);
+
+$indexModel = IndexModel::getInstance();
+$indexModel->setTransformers($hydrator);
+
+// echo '<pre>';
+// var_dump($indexModel->transformerList);
+// echo '</pre>';
+
+// $outerArray = $indexmodel->transformerList;
 
 echo '<pre>';
-var_dump($indexmodel);
+var_dump($outerArray);
 echo '</pre>';
 
-$Henri = new Transformer();
+// $Henri = new Transformer();
 
-$Henri = Hydrator::populateDetails($connection, 1);
+// $Henri = Hydrator::populateDetails($connection, 1);
 
-echo '<pre>';
-var_dump($Henri);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($Henri);
+// echo '</pre>';

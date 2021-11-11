@@ -15,7 +15,17 @@ class Hydrator
 
     public static function populateDetails(\PDO $db, int $id): Transformer
     {
-        $query = $db->prepare('SELECT `id`, `name`, `size` , `speed`, `power`, `disguise`, `top_trumps_rating`, `type`, `img_url` FROM `characters` WHERE `id` = ?');
+        $query = $db->prepare('SELECT `id`, 
+            `name`, 
+            `size` , 
+            `speed`, 
+            `power`, 
+            `disguise`, 
+            `top_trumps_rating`, 
+            `type`,
+            `img_url` 
+            FROM `characters` 
+            WHERE `id` = ?');
         $query->execute([$id]);
         $query->setFetchMode(\PDO::FETCH_CLASS, Transformer::class);
         return $query->fetch();

@@ -7,14 +7,14 @@ namespace Transformers\DB;
 class DbConnection
 {
     // The one and only class instance.
-    private static $instance = null;
+    private static ?DbConnection $instance = null;
 
     private \PDO $pdo;
 
-    private $host = 'DB';
-    private $dbname = 'transformersdb';
-    private $user = 'root';
-    private $password = 'password';
+    private string $host = 'DB';
+    private string $dbname = 'transformersdb';
+    private string $user = 'root';
+    private string $password = 'password';
 
     // The DB connection is established in the private constructor.
     private function __construct()
@@ -25,7 +25,7 @@ class DbConnection
         $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
-    public static function getInstance()
+    public static function getInstance(): DbConnection
     {
         if (!self::$instance) {
             self::$instance = new DbConnection();
@@ -34,7 +34,7 @@ class DbConnection
         return self::$instance;
     }
 
-    public function getConnection()
+    public function getConnection(): \PDO
     {
         return $this->pdo;
     }
