@@ -8,7 +8,6 @@ use PDO;
 use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
 use Transformers\Models\IndexModel;
-use Transformers\services\Filter;
 use Transformers\services\Search;
 
 class IndexViewHelper
@@ -70,33 +69,13 @@ class IndexViewHelper
         return $str;
     }
 
-    public function searchTransformers(string $search): void
-    {
-        // Search
-        $this->transformerList = Search::searchTransformers($this->connection, $search);
-    }
-
     /**
-     * FILTER EXPERIMENT (Not yet working, and Decepticons not included yet)
-     * Creates a html string with filtered Transformers cards
+     * Filter and search transformers
      * @return string
      */
-    public function filterInsecticons(): void
-    {
-        // Filter Insecticons
-        $this->transformerList = Filter::filterInsecticons($this->connection);
-    }
-
-    public function filterAutobots(): void
-    {
-        // Filter Autobots
-        $this->transformerList = Filter::filterAutobots($this->connection);
-    }
-
     public function searchFilterTransformers(string $search, string $filter): void
     {
         // Search
         $this->transformerList = Search::searchFilterTransformers($this->connection, $search, $filter);
     }
-
 }

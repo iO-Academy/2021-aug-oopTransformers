@@ -5,21 +5,32 @@ use Transformers\viewhelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
 
-if(isset($_GET['search'])) {
-    $search = $_GET['search'];
-    $indexViewHelper->searchTransformers($search);
-} else {
-    $search = '';
-}
+$decepticons = 'decepticon';
+$autobots = 'autobot';
+$insecticons = 'insecticon';
 
-//Test filters:
-if(isset($_GET['insecticons'])) {
-    $indexViewHelper->filterInsecticons();
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if(isset($_GET['search'])) {
+        $search = $_GET['search'];
+        $filters = [];
+        if (isset($_GET['filter-autobot'])) {
+            $autobots = $_GET["filter-autobot"];
+            $filters[] = $_GET['filter-autobot'];
+        }
+        if (isset($_GET['filter-insecticon'])) {
+            $insecticons = $_GET["filter-insecticon"];
+            $filters[] = $_GET['filter-insecticon'];
+        }
+        if (isset($_GET['filter-decepticon'])) {
+            $decepticons = $_GET["filter-decepticon"];
+            $filters[] = $_GET['filter-decepticon'];
+        }
+        $filter = implode(',', $filters);
+        $indexViewHelper->searchFilterTransformers($search, $filter);
+    } else {
+        $search = '';
+    }
 }
-elseif(isset($_GET['autobots'])) {
-    $indexViewHelper->filterAutobots();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -37,50 +48,47 @@ elseif(isset($_GET['autobots'])) {
     </head>
     <body>
         <main class="container-fluid d-flex flex-column flex-wrap" id="homePage">
+
+            <nav class="row d-flex align-items-center py-2 px-lg-5 px-sm-1 form-banner justify-content-between">
+
+                <form class="row input-group" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
+
+                    <div class="col-lg-4 mx-auto my-sm-5">
+                        <div class="input-group">
+                            <div class="input-group-text"><i class="bi bi-search"></i></div>
+                            <label for="search" class="invisible"></label>
+                            <input type="text" class="form-control" id="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
+                        </div>
+                    </div>
+
+                    <div class="filter-select col-lg-2 col-md-4 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="autobot" name="filter-autobot" <?php if (isset($autobots) && $autobots=="autobot") echo "checked";?>>
+                        <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Autobots</label>
+                    </div>
+
+                    <div class="filter-select col-lg-2 col-md-4 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="insecticon" name="filter-insecticon" <?php if (isset($insecticons) && $insecticons=="insecticon") echo "checked";?>>
+                        <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Insecticons</label>
+                    </div>
+
+                    <div class="filter-select col-lg-2 col-md-4 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="decepticon" name="filter-decepticon" <?php if (isset($decepticons) && $decepticons=="decepticon") echo "checked";?>>
+                        <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Decepticons</label>
+                    </div>
+
+                    <div class="col-lg-1 col-md-6 col-sm-6 my-auto">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+
+                    <div class="col-lg-1 col-md-6 col-sm-6 my-auto">
+                        <a href="index.php"><button class="btn btn-primary">Reset</button></a>
+                    </div>
+
+                </form>
+            </nav>
+
             <div class="header row d-flex">
                 <h1>Transformers</h1>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-1 col-sm-0"></div>
-
-                <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
-                    <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" name="autobots" checked></input>
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Autobots</label>
-                    </div>
-
-                    <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" name="insecticons" checked></input>
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Insecticons</label>
-                    </div>
-
-                    <div class="filter-select col-lg-2 col-sm-12 form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" name="decepticons" checked></input>
-                        <label class="form-check-label" for="flexSwitchCheckChecked">Decepticons</label>
-                    </div>
-
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fa fa-search"></i><span> Apply Filter</span>
-                    </button>
-                </form>
-
-                <div class="search-container col-lg-4 col-sm-12 d-flex justify-content-center">
-                    <form class="pe-2 input-group" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
-                        <input type="text" class="form-control" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i><span> Search</span>
-                            </button>
-                        </div>
-                    </form>
-                    <a href="index.php"><button class="btn btn-primary">Clear</button></a>
-
-                <div class="col-lg-1 col-sm-0"></div>
-
-                </div>
-
             </div>
 
             <div class="card-container d-flex flex-wrap justify-content-evenly m-3">
