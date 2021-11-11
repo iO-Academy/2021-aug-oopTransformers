@@ -5,17 +5,13 @@ use Transformers\ViewHelpers\IndexViewHelper;
 
 $indexViewHelper = new IndexViewHelper();
 
-$decepticons = 'decepticon';
-$autobots = 'autobot';
-$insecticons = 'insecticon';
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $autobots = $_GET['filter-autobot'] ?? '';
     $decepticons = $_GET['filter-decepticon'] ?? '';
     $insecticons = $_GET['filter-insecticon'] ?? '';
 
-    if(isset($_GET['search'])) {
+    if (isset($_GET['search'])) {
         $search = $_GET['search'];
         $filters = [];
         if (isset($_GET['filter-autobot'])) {
@@ -48,8 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/jpg" href="assets/images/autobot-logo.png"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/styles.css">
         <title>Transformers</title>
     </head>
     <body>
