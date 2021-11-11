@@ -14,6 +14,10 @@
   text-align: center;
 }
 
+.row {
+  --bs-gutter-x: 0;
+}
+
 /* Cards expand on mouse hover */
 
 .card {
@@ -111,6 +115,10 @@ a:hover {
   background: #000000d9;
 }
 
+.error-card {
+  cursor: default;
+}
+
 footer a {
   color: #ffffff;
   position: fixed;
@@ -118,10 +126,6 @@ footer a {
   right: 20px;
   text-decoration: none;
   border-radius: 5px;
-}
-
-.error-card {
-  cursor: default;
 }
 
 /* Media Queries */

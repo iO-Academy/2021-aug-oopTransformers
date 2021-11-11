@@ -33,8 +33,8 @@ class IndexViewHelper
         $transformers = Hydrator::populateIndex($this->connection);
 
         // Get IndexModel instance and pass in transformers
-//        $indexModel = IndexModel::getInstance();
-//        $indexModel->setTransformers($transformers);
+        $indexModel = IndexModel::getInstance();
+        $indexModel->setTransformers($transformers);
 
         $this->transformerList = $transformers;
     }
@@ -69,9 +69,13 @@ class IndexViewHelper
         return $str;
     }
 
-    public function searchTransformers(string $search): void
+    /**
+     * Filter and search transformers
+     * @return string
+     */
+    public function searchFilterTransformers(string $search, string $filter): void
     {
         // Search
-        $this->transformerList = Search::searchTransformers($this->connection, $search);
+        $this->transformerList = Search::searchFilterTransformers($this->connection, $search, $filter);
     }
 }
