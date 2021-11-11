@@ -7,7 +7,9 @@ $indexViewHelper = new IndexViewHelper();
 
 if(isset($_GET['search'])) {
     $search = $_GET['search'];
-    $indexViewHelper->searchTransformers($search);
+    $trimmedSearch = trim($search);
+    $rawSearch = htmlentities($trimmedSearch);
+    $indexViewHelper->searchTransformers($trimmedSearch);
 } else {
     $search = '';
 }
