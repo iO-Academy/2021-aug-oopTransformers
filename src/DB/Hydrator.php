@@ -2,7 +2,7 @@
 
 namespace Transformers\DB;
 
-use Transformers\Abstracts\Transformer;
+use Transformers\Entities\Transformer;
 
 class Hydrator
 {

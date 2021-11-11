@@ -5,8 +5,7 @@ namespace Transformers\Models;
 class IndexModel
 {
     private static ?IndexModel $instance = null;
-
-    public array $transformerList = [];
+    private array $transformerList = [];
 
     public static function getInstance(): IndexModel
     {
@@ -16,8 +15,13 @@ class IndexModel
         return self::$instance;
     }
 
-    public function setTransformers($transformers)
+    public function setTransformers($transformers): void
     {
         $this->transformerList = $transformers;
+    }
+
+    public function getTransformers(): array
+    {
+        return $this->transformerList;
     }
 }

@@ -21,7 +21,6 @@ if(isset($_GET['search'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Transformers</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/jpg" href="assets/images/autobot-logo.png"/>
@@ -36,7 +35,7 @@ if(isset($_GET['search'])) {
 
                 <form class="row d-flex" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
 
-                    <div class="col-lg-4 col-sm-12 mx-auto my-4">
+                    <div class="col-lg-5 col-sm-12 mx-auto my-4">
                         <div class="input-group px-4">
                             <div class="input-group-text"><i class="bi bi-search"></i></div>
                             <label for="search" class="invisible"></label>
@@ -44,28 +43,28 @@ if(isset($_GET['search'])) {
                         </div>
                     </div>
 
-                    <div class="filter-select my-4 col-lg-2 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
+                    <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
                         <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Autobots</label>
                     </div>
 
-                    <div class="filter-select my-4 col-lg-2 col-sm-4 my-auto form-check form-switch d-flex justify-content-center align-content-center">
+                    <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center align-content-center">
                         <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Insecticons</label>
                     </div>
 
-                    <div class="filter-select my-4 col-lg-2 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
+                    <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
                         <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" checked>
                         <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Decepticons</label>
                     </div>
 
-                    <div class="col-lg-2 d-flex justify-content-between px-5">
-                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center">
+                    <div class="col-lg-4 d-flex justify-content-evenly px-5">
+                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center mx-4">
                             <button class="m-4 btn btn-primary" type="submit">Submit</button>
                         </div>
 
-                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-around">
-                            <a href="index.php"><button class="my-4 btn btn-primary">Reset</button></a>
+                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-between">
+                            <a href="index.php"><button type="button" class="my-4 btn btn-primary">Reset</button></a>
                         </div>
                     </div>
 
