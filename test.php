@@ -10,6 +10,7 @@ use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
 use Transformers\Models\IndexModel;
 use Transformers\Abstracts\Transformer;
+use Transformers\services\Search;
 
 
 $testinstance = DbConnection::getinstance();
@@ -28,9 +29,9 @@ $indexModel->setTransformers($hydrator);
 
 // $outerArray = $indexmodel->transformerList;
 
-echo '<pre>';
-var_dump($outerArray);
-echo '</pre>';
+//echo '<pre>';
+//var_dump($outerArray);
+//echo '</pre>';
 
 // $Henri = new Transformer();
 
@@ -39,3 +40,8 @@ echo '</pre>';
 // echo '<pre>';
 // var_dump($Henri);
 // echo '</pre>';
+
+$searchFilter = Search::searchFilterTransformers($connection, 'a', 'insecticon,autobot');
+ echo '<pre>';
+ var_dump($searchFilter);
+ echo '</pre>';

@@ -93,4 +93,10 @@ class IndexViewHelper
         $this->transformerList = Filter::filterAutobots($this->connection);
     }
 
+    public function searchFilterTransformers(string $search, string $filter): void
+    {
+        // Search
+        $this->transformerList = Search::searchFilterTransformers($this->connection, $search, $filter);
+    }
+
 }
