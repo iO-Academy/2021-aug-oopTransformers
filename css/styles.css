@@ -18,6 +18,10 @@
   --bs-gutter-x: 0;
 }
 
+.search {
+  width: 25vw;
+}
+
 /* Cards expand on mouse hover */
 
 .card {

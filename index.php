@@ -45,48 +45,49 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <link rel="shortcut icon" type="image/jpg" href="assets/images/autobot-logo.png"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
         <title>Transformers</title>
     </head>
     <body>
         <main class="d-flex flex-column flex-wrap" id="homePage">
 
-            <nav class="px-lg-5 px-sm-1 form-banner">
+            <nav class="form-banner">
 
-                <form class="row d-flex" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
+                <form class="row justify-content-between align-items-center" action="<?php echo $_SERVER["PHP_SELF"];?>" method="get">
 
-                    <div class="col-lg-5 col-sm-12 mx-auto my-4">
-                        <div class="input-group px-4">
-                            <div class="input-group-text"><i class="bi bi-search"></i></div>
-                            <label for="search" class="invisible"></label>
-                            <input type="text" class="form-control" id="search" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
+<!--                    <div class="col-lg-3 p-2">-->
+<!--                    </div>-->
+
+                    <div class="input-group search col-lg-3 p-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
                         </div>
+                        <input type="text" class="form-control" id="search" placeholder='Search...' value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" name="search">
                     </div>
 
-                    <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="autobot" name="filter-autobot" <?php if (isset($autobots) && $autobots=="autobot") echo "checked";?>>
-                        <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Autobots</label>
-                    </div>
+                    <div class="col-lg-6 d-flex justify-content-evenly p-2">
 
-                    <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center align-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="insecticon" name="filter-insecticon" <?php if (isset($insecticons) && $insecticons=="insecticon") echo "checked";?>>
-                        <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Insecticons</label>
-                    </div>
-
-                    <div class="filter-select my-4 col-lg-1 col-sm-4 my-auto form-check form-switch d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" id="flexSwitchCheckChecked" value="decepticon" name="filter-decepticon" <?php if (isset($decepticons) && $decepticons=="decepticon") echo "checked";?>>
-                        <label class="form-check-label mx-1" for="flexSwitchCheckChecked">Decepticons</label>
-                    </div>
-
-                    <div class="col-lg-4 d-flex justify-content-evenly px-5">
-                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-center mx-4">
-                            <button class="m-4 btn btn-primary" type="submit">Submit</button>
+                        <div class="form-check form-switch">
+                            <input type="checkbox" class="form-check-input" id="autobot" value="autobot" name="filter-autobot" <?php if (isset($autobots) && $autobots=="autobot") echo "checked";?>>
+                            <label class="form-check-label mx-1" for="autobot">Autobots</label>
                         </div>
 
-                        <div class="col-lg-1 col-md-6 col-sm-6 d-flex justify-content-between">
-                            <a href="index.php"><button type="button" class="my-4 btn btn-primary">Reset</button></a>
+                        <div class="form-check form-switch">
+                            <input type="checkbox" class="form-check-input" id="insecticon" value="insecticon" name="filter-insecticon" <?php if (isset($insecticons) && $insecticons=="insecticon") echo "checked";?>>
+                            <label class="form-check-label mx-1" for="insecticon">Insecticons</label>
                         </div>
+
+                        <div class="form-check form-switch">
+                            <input type="checkbox" class="form-check-input" id="decepticon" value="decepticon" name="filter-decepticon" <?php if (isset($decepticons) && $decepticons=="decepticon") echo "checked";?>>
+                            <label class="form-check-label mx-1" for="decepticon">Decepticons</label>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3 d-flex justify-content-evenly p-2">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <a href="index.php"><button type="button" class="btn btn-primary">Reset</button></a>
                     </div>
 
                 </form>

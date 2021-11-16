@@ -2,8 +2,6 @@
 
 namespace Transformers\ViewHelpers;
 
-require "vendor/autoload.php";
-
 use PDO;
 use Transformers\DB\DbConnection;
 use Transformers\DB\Hydrator;
