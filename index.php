@@ -13,6 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     if (isset($_GET['search'])) {
         $search = $_GET['search'];
+        $trimmedSearch = trim($search);
+        $safeSearch = htmlentities($trimmedSearch);
         $filters = [];
         if (isset($_GET['filter-autobot'])) {
             $autobots = $_GET["filter-autobot"];
@@ -27,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $filters[] = $_GET['filter-decepticon'];
         }
         $filter = implode(',', $filters);
-        $indexViewHelper->searchFilterTransformers($search, $filter);
+        $indexViewHelper->searchFilterTransformers($safeSearch, $filter);
     } else {
         $search = '';
     }

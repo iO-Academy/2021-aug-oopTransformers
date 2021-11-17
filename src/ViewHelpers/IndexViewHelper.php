@@ -71,9 +71,9 @@ class IndexViewHelper
      * Filter and search transformers
      * @return string
      */
-    public function searchFilterTransformers(string $search, string $filter): void
+    public function searchFilterTransformers(string $safeSearch, string $filter): void
     {
         // Search
-        $this->transformerList = Search::searchFilterTransformers($this->connection, $search, $filter);
+        $this->transformerList = Search::searchFilterTransformers($this->connection, $safeSearch, $filter);
     }
 }
