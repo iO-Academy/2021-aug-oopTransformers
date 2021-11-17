@@ -17,20 +17,25 @@ $transformer = new Details();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Transformer Details</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/images/autobot-logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://kit.fontawesome.com/d9cf2b67c4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <title>Transformer Details</title>
 </head>
 <body class="details-body">
-<h1 class="text-center mt-2">Transformers</h1>
-<div>
-    <div class="details-container d-flex flex-column flex-md-row justify-content-center align-items-center mx-auto">
-        <?php echo $transformer->createTransformerDetails($id); ?>
+
+    <h1 class="text-center mt-2">Transformers</h1>
+
+    <div>
+        <div class="details-container d-flex flex-column flex-md-row justify-content-center align-items-center mx-auto">
+            <?php echo $transformer->createTransformerDetails($id); ?>
+        </div>
     </div>
-</div>
-<div class="text-lg-center text-center p-lg-4 me-lg-5 mt-lg-1 mt-4">
-    <a href="index.php" class="home-button text-decoration-none"><i class="fas fa-home"></i></a>
-</div>
+
+    <footer class="d-flex justify-content-center my-4">
+        <a href="index.php" class="btn btn-primary"><i class="bi bi-house-door-fill"></i> Home</a>
+    </footer>
+
 </body>
 </html>

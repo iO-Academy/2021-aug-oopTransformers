@@ -119,13 +119,11 @@ a:hover {
   cursor: default;
 }
 
-footer a {
-  color: #ffffff;
+.btn-back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  text-decoration: none;
-  border-radius: 5px;
+  display: none;
 }
 
 /* Media Queries */
